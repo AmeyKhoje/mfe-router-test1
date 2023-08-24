@@ -17,7 +17,7 @@ module.exports = ({ mode } = { mode: 'production' }) => {
       static: {
         directory: path.resolve(__dirname, './public'),
       },
-      port: 5001,
+      port: 5009,
       hot: true,
       // open: true,
       compress: true,
@@ -65,13 +65,12 @@ module.exports = ({ mode } = { mode: 'production' }) => {
     },
     plugins: [
       new ModuleFederationPlugin({
-        name: 'remoteTwo',
+        name: 'utilityRemote',
         filename: 'remoteEntry.js',
-        remotes: {
-          'utility-remote': 'utilityRemote@http://localhost:5009/remoteEntry.js'
-        },
+        remotes: {},
         exposes: {
-          './RemoteApp2': './src/App.tsx',
+          './helpers': './src/helpers/index.ts',
+          './hooks': './src/hooks/index.ts'
         },
         shared: {
           react: {

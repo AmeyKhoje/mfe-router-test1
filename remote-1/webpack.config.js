@@ -67,7 +67,9 @@ module.exports = ({ mode } = { mode: 'production' }) => {
       new ModuleFederationPlugin({
         name: 'remoteOne',
         filename: 'remoteEntry.js',
-        remotes: {},
+        remotes: {
+          'utility-remote': 'utilityRemote@http://localhost:5009/remoteEntry.js'
+        },
         exposes: {
           './RemoteApp': './src/App.tsx'
         },

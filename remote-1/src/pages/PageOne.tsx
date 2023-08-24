@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom"
+import {navigateToRemote} from 'utility-remote/helpers'
 
 const PageOne = () => {
   const navigate = useNavigate();
@@ -6,7 +7,7 @@ const PageOne = () => {
     <div className="page-one">
       Page One Remote App One
       <div>
-        <button onClick={() => navigate('/remote-two')}>
+        <button onClick={() => navigateToRemote('/remote-two')}>
           Remote App Two
         </button>
       </div>

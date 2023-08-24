@@ -11,6 +11,7 @@ const PageOne = () => {
       Page One Remote App 2
       <div>
         <button onClick={() => navigateToRemote('/remote-one')}>Remote One App</button>
+        <button onClick={() => navigate('/remote-two/two')}>Remote Two - Page 2</button>
       </div>
     </div>
   )

@@ -18,5 +18,4 @@ declare module '*.png' {
 }
 
 declare module 'remoteOne/*';
-declare module 'remoteTwo/*'
-
+declare module 'remoteTwo/*';
